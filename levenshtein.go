@@ -1,6 +1,22 @@
 // levenshtein implements the Levenshtein edit distance using the
 // Wagner-Fisher algorithm
 // (http://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm).
+//
+// Examples
+//
+// Non-threadsafe usage:
+//
+//    import "github.com/kse/levenshtein"
+//
+//    dist := levenshtein.Dist([]byte("Star"), []byte("Wars"))
+//
+// Threadsafe usage:
+//    
+//    import "github.com/kse/levenshtein"
+//
+//    lev := levenshtein.New(1,1,1)
+//
+//    dist := lev.Dist([]byte("Star"), []byte("Wars"))
 package levenshtein
 
 /* TODO:
